@@ -11,7 +11,7 @@ def test_convert():
 		for line in f.readlines():
 			if line.lower().find("hello") >= 0:
 				before_count += 1
-	with open("target_converted.py", "r") as f:
+	with open(AFTER, "r") as f:
 		for line in f.readlines():
 			if line.lower().find("hiya") >= 0:
 				after_count += 1

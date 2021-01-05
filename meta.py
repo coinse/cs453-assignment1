@@ -1,14 +1,18 @@
-import astor
+import ast
 import sys
 
+
 def convert_str(before, after):
-	root = astor.parse_file(before)
-	
-	after_file = open(after, "w")
-	after_file.write(astor.to_source(root))
+	with open(before, "r") as before_file:
+		src = before_file.read()
+	root = ast.parse(source = src,)
+	print(ast.unparse(root))
 
 def main():
-	convert_str(sys.argv[1], sys.argv[2])
+	try:
+		convert_str(sys.argv[1], sys.argv[2])
+	except:
+		convert_str("target.py", "target_after.py")
 
 if __name__ == '__main__':
 	main()

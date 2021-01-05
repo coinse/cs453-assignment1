@@ -1,7 +1,8 @@
 print("Hello, World!")
 
 def main():
-	print("Um, hello?")
+	for i in range(10):
+		print("Um, hello?")
 
 if __name__ == '__main__':
 	main()
